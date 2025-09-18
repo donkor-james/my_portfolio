@@ -3,7 +3,9 @@ import { Github, ExternalLink, Mail, Linkedin, ChevronLeft, ChevronRight, Menu, 
 import Chat from '../assets/chat.png'; // Assuming these are image imports
 import Easy from '../assets/easy.png'; // Assuming these are image imports
 import Wiki from '../assets/wiki.png'; // Assuming these are image imports
-import Write from '../assets/write.png'; // Assuming these are image imports
+import Write from '../assets/write_space.png'; // Assuming these are image imports
+import ProfilePic from '../assets/me.jpg'; // Assuming these are image imports
+import Andrews from '../assets/andrews.jpeg'; // Assuming these are image imports
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [activeFilter, setActiveFilter] = useState('all');
@@ -34,22 +36,22 @@ const Portfolio = () => {
     },
     {
       id: 3,
-      title: "Premier League Insider",
-      category: "automation",
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
-      description: `Engineered an end-to-end automation pipeline to fetch Premier League news and match previews from RSS feeds and external APIs.\nCreated Gemini AI client to generate authentic, style-adaptive articles directly from real news sources, with advanced prompt engineering for versatile writing styles.\nImplemented a Telegram DM review and approval workflow, allowing manual or automated publishing decisions.\nAutomated publishing to Blogger, X/Twitter and EPL Insider Telegram channel, including image handling and hashtag extraction for optimized social media engagement.\nOrchestrated asynchronous operations for efficient, scalable news delivery.`,
-      technologies: ["Python", "Gemini AI", "Telegram Bot", "APIs", "AsyncIO"],
-      github: "",
-      demo: ""
-    },
-    {
-      id: 4,
       title: "Easy Download Bot",
       category: "automation",
       image: Easy,
       description: `Developed a Telegram bot for automated video downloads from multiple platforms.\nUtilized Python and Pyrogram for bot functionality, along with yt-dlp for video downloading.\nImplemented real-time download tracking features for enhanced user experience.`,
       technologies: ["Python", "Pyrogram", "yt-dlp", "Telegram Bot"],
-      github: "",
+      github: "https://github.com/donkor-james/easy_download_bot.git",
+      demo: ""
+    },
+    {
+      id: 4,
+      title: "Premier League Insider",
+      category: "automation",
+      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
+      description: `Engineered an end-to-end automation pipeline to fetch Premier League news and match previews from RSS feeds and external APIs.\nCreated Gemini AI client to generate authentic, style-adaptive articles directly from real news sources, with advanced prompt engineering for versatile writing styles.\nImplemented a Telegram DM review and approval workflow, allowing manual or automated publishing decisions.\nAutomated publishing to Blogger, X/Twitter and EPL Insider Telegram channel, including image handling and hashtag extraction for optimized social media engagement.\nOrchestrated asynchronous operations for efficient, scalable news delivery.`,
+      technologies: ["Python", "Gemini AI", "Telegram Bot", "APIs", "AsyncIO"],
+      github: "https://github.com/donkor-james/epl_insider.git",
       demo: ""
     },
     {
@@ -68,11 +70,11 @@ const Portfolio = () => {
     {
       company: "Insight Ghana (Whitebox Media)",
       position: "Backend Intern",
-      duration: "Sept 2024 – Dec 2024",
+      duration: "Sept 2024 – Nov 2024",
       description: `Developed secure authentication features for a voting system using Django, including user registration and login.\nImplemented Two-Factor Authentication (2FA) for enhanced security.\nCreated RESTful API endpoints for seamless frontend-backend communication.\nManaged CRUD operations for user accounts and voting records.\nCollaborated with cross-functional teams to ensure project alignment.`,
       technologies: ["Django", "REST API", "2FA", "Authentication"],
-      hasRecommendation: false,
-      hasCompletion: true
+      hasRecommendation: true,
+      hasCompletion: false
     },
     {
       company: "Pizzaman Chickenman",
@@ -81,16 +83,16 @@ const Portfolio = () => {
       description: `Developed a responsive, mobile-friendly restaurant website using React and Tailwind CSS.\nEnhanced client's online sales and customer engagement through improved UI/UX design.`,
       technologies: ["React", "Tailwind CSS", "UI/UX"],
       hasRecommendation: false,
-      hasCompletion: true
+      hasCompletion: false
     },
     {
       company: "Inserviz Inc",
       position: "Web Developer Intern",
-      duration: "2023",
+      duration: "Sept 2023 - December 2023",
       description: `Assisted in the development of company website.\nHandled website responsiveness.\nCollaborated with the design and backend teams to implement new features and enhancements.`,
       technologies: ["React", "Web Development", "Team Collaboration"],
       hasRecommendation: false,
-      hasCompletion: true
+      hasCompletion: false
     }
   ];
 
@@ -99,13 +101,13 @@ const Portfolio = () => {
       name: "Andrews Opoku",
       position: "Senior Developer at Inserviz",
       content: "Exceptional problem-solving skills and attention to detail. A pleasure to work with.",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face"
+      avatar: Andrews,
     },
     {
       name: "Miss Florence Serwaa Akoto Arhin",
-      position: "HR",
-      content: "Delivered high-quality code consistently and met all deadlines. Highly recommended.",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
+      position: "HR at WhiteBox Media",
+      content: "I am confident in James Donkor's skills and his potential to excel in any future endeavors. He has my highest recommendation",
+      avatar: "",
     }
   ];
 
@@ -159,24 +161,26 @@ const Portfolio = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="text-xl font-bold">
-              <span className="text-white">Your</span>
-              <span className="text-amber-custom">Name</span>
+              <span className="text-white">James</span>
+              <span className="text-amber-custom">Donkor</span>
             </div>
             
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
               {['home', 'about', 'experience', 'projects', 'testimonials', 'contact'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => setActiveSection(item)}
-                  className={`capitalize transition-colors ${
-                    activeSection === item 
-                      ? 'text-amber-400' 
-                      : 'text-white/70 hover:text-white'
-                  }`}
-                >
-                  {item}
-                </button>
+                <a href={`#${item}`} >
+                  <button
+                    key={item}
+                    onClick={() => setActiveSection(item)}
+                    className={`capitalize transition-colors ${
+                      activeSection === item 
+                        ? 'text-amber-400' 
+                        : 'text-white/70 hover:text-white'
+                    }`}
+                  >
+                    {item}
+                  </button>
+                </a>
               ))}
             </div>
 
@@ -215,325 +219,317 @@ const Portfolio = () => {
         )}
       </nav>
 
-      {/* Hero Section */}
-      {activeSection === 'home' && (
-        <section className="pt-24 pb-16 relative z-10">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col lg:flex-row items-center justify-between min-h-[80vh]">
-              <div className="flex-1 text-center lg:text-left mb-12 lg:mb-0">
-                <h1 className="text-5xl lg:text-7xl font-bold mb-6">
-                  Building Tomorrow's{' '}
-                  <span className="text-red-500">Apps</span>{' '}
-                  <span className="text-white">Today</span>
-                </h1>
-                <p className="text-xl text-white/80 mb-8 max-w-2xl">
-                  Hi, I'm [Your Name], a Master's student in Software Engineering at [University] 
-                  and a full-stack web developer. I transform ideas into functional, 
-                  user-friendly digital solutions. Check out my skills and tech stack.
+          {/* Hero Section */}
+          <section className="pt-24 pb-16 relative z-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="flex flex-col lg:flex-row items-center justify-between min-h-[80vh]">
+                <div className="flex-1 text-center lg:text-left mb-12 lg:mb-0">
+                  <h1 className="text-5xl lg:text-7xl font-bold mb-6">
+                    Building Tomorrow's{' '}
+                    <span className="text-red-500">Apps</span>{' '}
+                    <span className="text-white">Today</span>
+                  </h1>
+                  <p className="text-xl text-white/80 mb-8 max-w-2xl">
+                    Hi, I'm James Donkor, Skilled Software Developer with experience in web development, bot and automation development. I am proficient in multiple programming languages and frameworks with a strong foundation in computer science principles.
+                  </p>
+                  <a href="projects" className=''>
+                    <button 
+                      className="inline-flex items-center btn-amber px-8 py-4"
+                    >
+                      View My Work
+                    <ArrowRight className="ml-2" size={20} />
+                  </button>
+                  </a>
+                </div>
+                
+                <div className="flex-shrink-0">
+                  <div className="relative">
+                    <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-amber-custom shadow-2xl">
+                      <img
+                        src={ProfilePic}
+                        alt="Profile Picture"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="absolute -bottom-4 -right-4 bg-amber-custom text-black p-3 rounded-full">
+                      <Code size={24} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* About Section */}
+          <section className="pt-24 pb-16 relative z-10" id='about'>
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-4xl font-bold mb-12 text-center">About Me</h2>
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
+                <p className="text-lg text-white/90 leading-relaxed mb-6">
+                  With hands-on experience across the full web development stack, I've built PWAs with Next.js, 
+                  designed data pipelines in Python, and migrated backend systems from .NET to Node.js. From 
+                  freelance design roots in Photoshop to shipping production React apps, I focus on performant 
+                  code and intuitive interfaces. Let's build something impactful.
                 </p>
-                <button 
-                  onClick={() => setActiveSection('projects')}
-                  className="inline-flex items-center btn-amber px-8 py-4"
-                >
-                  View My Work
-                  <ArrowRight className="ml-2" size={20} />
-                </button>
-              </div>
-              
-              <div className="flex-shrink-0">
-                <div className="relative">
-                  <div className="w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-amber-custom shadow-2xl">
-                    <img
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face"
-                      alt="Your Name"
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="absolute -bottom-4 -right-4 bg-amber-custom text-black p-3 rounded-full">
-                    <Code size={24} />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* About Section */}
-      {activeSection === 'about' && (
-        <section className="pt-24 pb-16 relative z-10">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold mb-12 text-center">About Me</h2>
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
-              <p className="text-lg text-white/90 leading-relaxed mb-6">
-                With hands-on experience across the full web development stack, I've built PWAs with Next.js, 
-                designed data pipelines in Python, and migrated backend systems from .NET to Node.js. From 
-                freelance design roots in Photoshop to shipping production React apps, I focus on performant 
-                code and intuitive interfaces. Let's build something impactful.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-                <div className="text-center">
-                  <div className="bg-amber-custom p-4 rounded-lg inline-block mb-4">
-                    <Code className="text-amber-400" size={32} />
-                  </div>
-                  <h3 className="font-semibold mb-2">Frontend Development</h3>
-                  <p className="text-white/70 text-sm">React, TypeScript, Tailwind CSS</p>
-                </div>
-                <div className="text-center">
-                  <div className="bg-amber-custom p-4 rounded-lg inline-block mb-4">
-                    <Database className="text-amber-400" size={32} />
-                  </div>
-                  <h3 className="font-semibold mb-2">Backend Development</h3>
-                  <p className="text-white/70 text-sm">Node.js, Python, PostgreSQL, MongoDB</p>
-                </div>
-                <div className="text-center">
-                  <div className="bg-amber-500/20 p-4 rounded-lg inline-block mb-4">
-                    <Bot className="text-amber-400" size={32} />
-                  </div>
-                  <h3 className="font-semibold mb-2">Automation & Bots</h3>
-                  <p className="text-white/70 text-sm">Python, Selenium, Bot Framework</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Experience Section */}
-      {activeSection === 'experience' && (
-        <section className="pt-24 pb-16 relative z-10">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold mb-12 text-center">My Experience</h2>
-            <div className="space-y-8">
-              {experiences.map((exp, index) => (
-                <div key={index} className="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
-                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
-                    <div>
-                      <h3 className="text-2xl font-bold text-amber-400">{exp.position}</h3>
-                      <h4 className="text-xl text-white/80">{exp.company}</h4>
-                      <p className="text-white/60">{exp.duration}</p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                  <div className="text-center">
+                    <div className="bg-amber-custom p-4 rounded-lg inline-block mb-4">
+                      <Code className="text-amber-400" size={32} />
                     </div>
-                    <div className="flex gap-2 mt-4 lg:mt-0">
-                      {exp.hasRecommendation && (
-                        <span className="badge-amber">
-                          Recommendation Letter
-                        </span>
-                      )}
-                      {exp.hasCompletion && (
-                        <span className="badge-amber" style={{background:'#3b82f6',color:'#fff'}}>
-                          Completion Certificate
-                        </span>
-                      )}
-                    </div>
+                    <h3 className="font-semibold mb-2">Frontend Development</h3>
+                    <p className="text-white/70 text-sm">React, Tailwind CSS, Bootstrap</p>
                   </div>
-                  <p className="text-white/80 mb-4">{exp.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {exp.technologies.map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="bg-amber-custom text-black px-3 py-1 rounded-full text-sm"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                  <div className="text-center">
+                    <div className="bg-amber-custom p-4 rounded-lg inline-block mb-4">
+                      <Database className="text-amber-400" size={32} />
+                    </div>
+                    <h3 className="font-semibold mb-2">Backend Development</h3>
+                    <p className="text-white/70 text-sm">Python, PostgreSQL, MySQL, Rest Api, Websockets, Data Caching</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="bg-amber-custom p-4 rounded-lg inline-block mb-4">
+                      <Bot className="text-amber-400" size={32} />
+                    </div>
+                    <h3 className="font-semibold mb-2">Automation & Bots</h3>
+                    <p className="text-white/70 text-sm">Python, Selenium, Beautiful Soup, Bot Frameworks</p>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
-        </section>
-      )}
+          </section>
 
-      {/* Projects Section */}
-      {activeSection === 'projects' && (
-        <section className="pt-24 pb-16 relative z-10">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold mb-12 text-center">Personal Projects</h2>
-            
-            {/* Filter Buttons */}
-            <div className="flex flex-wrap justify-center gap-4 mb-12">
-              {[
-                { key: 'all', label: 'All Projects', icon: Code },
-                { key: 'frontend', label: 'Frontend', icon: Code },
-                { key: 'fullstack', label: 'Full Stack', icon: Database },
-                { key: 'mobile', label: 'Mobile', icon: Smartphone },
-                { key: 'automation', label: 'Automation & Bots', icon: Bot }
-              ].map(({ key, label, icon: Icon }) => (
-                <button
-                  key={key}
-                  onClick={() => setActiveFilter(key)}
-                  className={`flex items-center px-6 py-3 rounded-full transition-colors ${
-                    activeFilter === key
-                      ? 'bg-amber-500 text-black'
-                      : 'bg-white/10 text-white hover:bg-white/20'
-                  }`}
-                >
-                  <Icon size={18} className="mr-2" />
-                  {label}
-                </button>
-              ))}
-            </div>
-
-            {/* Project Slider */}
-            <div className="relative">
-              <div className="overflow-hidden rounded-2xl">
-                <div 
-                  className="flex transition-transform duration-500 ease-in-out"
-                  style={{ transform: `translateX(-${currentProjectIndex * 100}%)` }}
-                >
-                  {filteredProjects.map((project) => (
-                    <div key={project.id} className="w-full flex-shrink-0">
-                      <div className="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                          <div className="relative h-64 lg:h-full">
-                            <img
-                              src={project.image}
-                              alt={project.title}
-                              className="w-full h-full object-cover"
-                            />
-                            {project.featured && (
-                              <div className="absolute top-4 left-4 bg-amber-custom text-black px-3 py-1 rounded-full text-sm font-semibold">
-                                Featured
-                              </div>
-                            )}
+          {/* Experience Section */}
+          <section className="pt-24 pb-16 relative z-10" id='experience'>
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-4xl font-bold mb-12 text-center">My Experience</h2>
+              <div className="space-y-8">
+                {experiences.map((exp, index) => (
+                  <div key={index} className="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
+                    <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
+                      <div>
+                        <h3 className="text-2xl font-bold text-amber-400">{exp.position}</h3>
+                        <h4 className="text-xl text-white/80">{exp.company}</h4>
+                        <p className="text-white/60">{exp.duration}</p>
+                      </div>
+                      <div className="flex gap-2 mt-4 lg:mt-0">
+                        {exp.hasRecommendation && (
+                          <div className='px-4 py-2 rounded-full' style={{background:'#3b82f6',color:'#fff'}}>
+                            <a href='../assets/Insight_recommendation_letter.pdf' target='_blank' rel='noopener noreferrer'>
+                              <span className="" >
+                                Recommendation Letter
+                              </span>
+                            </a>
                           </div>
-                          <div className="p-8">
-                            <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
-                            <p className="text-white/80 mb-6">{project.description}</p>
-                            <div className="flex flex-wrap gap-2 mb-6">
-                              {project.technologies.map((tech, index) => (
-                                <span
-                                  key={index}
-                                  className="bg-amber-custom text-black px-3 py-1 rounded-full text-sm"
-                                >
-                                  {tech}
-                                </span>
-                              ))}
-                            </div>
-                            <div className="flex gap-4">
-                              <a
-                                href={project.github}
-                                className="flex items-center bg-white/10 text-white px-4 py-2 rounded-lg hover:bg-white/20 transition-colors"
-                              >
-                                <Github size={18} className="mr-2" />
-                                Code
-                              </a>
-                              {project.demo && (
-                                <a
-                                  href={project.demo}
-                                  className="flex items-center bg-amber-500 text-black px-4 py-2 rounded-lg hover:bg-amber-400 transition-colors"
-                                >
-                                  <ExternalLink size={18} className="mr-2" />
-                                  Demo
-                                </a>
+                        )}
+                        {exp.hasCompletion && (
+                          <a href='../assets/Insight_completion_certificate.pdf' target='_blank' rel='noopener noreferrer'>
+                            <span className="badge-amber" style={{background:'#3b82f6',color:'#fff'}}>
+                              letter of Completion
+                            </span>
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                    <p className="text-white/80 mb-4">{exp.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {exp.technologies.map((tech, techIndex) => (
+                        <span
+                          key={techIndex}
+                          className="bg-amber-custom text-black px-3 py-1 rounded-full text-sm"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          {/* Projects Section */}
+          <section className="pt-24 pb-16 relative z-10" id='projects'>
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-4xl font-bold mb-12 text-center">Personal Projects</h2>
+              
+              {/* Filter Buttons */}
+              <div className="flex flex-wrap justify-center gap-4 mb-12">
+                {[
+                  { key: 'all', label: 'All Projects', icon: Code },
+                  { key: 'frontend', label: 'Frontend', icon: Code },
+                  { key: 'fullstack', label: 'Full Stack', icon: Database },
+                  { key: 'automation', label: 'Automation & Bots', icon: Bot }
+                ].map(({ key, label, icon: Icon }) => (
+                  <button
+                    key={key}
+                    onClick={() => setActiveFilter(key)}
+                    className={`flex items-center px-6 py-3 rounded-full transition-colors ${
+                      activeFilter === key
+                        ? 'bg-amber-500 text-black'
+                        : 'bg-white/10 text-white hover:bg-white/20'
+                    }`}
+                  >
+                    <Icon size={18} className="mr-2" />
+                    {label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Project Slider */}
+              <div className="relative">
+                <div className="overflow-hidden rounded-2xl">
+                  <div 
+                    className="flex transition-transform duration-500 ease-in-out"
+                    style={{ transform: `translateX(-${currentProjectIndex * 100}%)` }}
+                  >
+                    {filteredProjects.map((project) => (
+                      <div key={project.id} className="w-full flex-shrink-0">
+                        <div className="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden">
+                          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                            <div className="relative h-64 lg:h-full">
+                              <img
+                                src={project.image}
+                                alt={project.title}
+                                className="w-full h-full object-cover"
+                              />
+                              {project.featured && (
+                                <div className="absolute top-4 left-4 bg-amber-custom text-black px-3 py-1 rounded-full text-sm font-semibold">
+                                  Featured
+                                </div>
                               )}
+                            </div>
+                            <div className="p-8">
+                              <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
+                              <p className="text-white/80 mb-6">{project.description}</p>
+                              <div className="flex flex-wrap gap-2 mb-6">
+                                {project.technologies.map((tech, index) => (
+                                  <span
+                                    key={index}
+                                    className="bg-amber-custom text-black px-3 py-1 rounded-full text-sm"
+                                  >
+                                    {tech}
+                                  </span>
+                                ))}
+                              </div>
+                              <div className="flex gap-4">
+                                <a
+                                  href={project.github}
+                                  className="flex items-center bg-white/10 text-white px-4 py-2 rounded-lg hover:bg-white/20 transition-colors"
+                                >
+                                  <Github size={18} className="mr-2" />
+                                  Code
+                                </a>
+                                {project.demo && (
+                                  <a
+                                    href={project.demo}
+                                    className="flex items-center bg-amber-500 text-black px-4 py-2 rounded-lg hover:bg-amber-400 transition-colors"
+                                  >
+                                    <ExternalLink size={18} className="mr-2" />
+                                    Demo
+                                  </a>
+                                )}
+                              </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Navigation Arrows */}
+                <button
+                  onClick={prevProject}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm p-3 rounded-full hover:bg-white/20 transition-colors"
+                >
+                  <ChevronLeft size={24} />
+                </button>
+                <button
+                  onClick={nextProject}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm p-3 rounded-full hover:bg-white/20 transition-colors"
+                >
+                  <ChevronRight size={24} />
+                </button>
+
+                {/* Dots Indicator */}
+                <div className="flex justify-center mt-6 space-x-2">
+                  {filteredProjects.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrentProjectIndex(index)}
+                      className={`w-3 h-3 rounded-full transition-colors ${
+                        index === currentProjectIndex ? 'bg-amber-400' : 'bg-white/30'
+                      }`}
+                    />
                   ))}
                 </div>
               </div>
+            </div>
+          </section>
 
-              {/* Navigation Arrows */}
-              <button
-                onClick={prevProject}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm p-3 rounded-full hover:bg-white/20 transition-colors"
-              >
-                <ChevronLeft size={24} />
-              </button>
-              <button
-                onClick={nextProject}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm p-3 rounded-full hover:bg-white/20 transition-colors"
-              >
-                <ChevronRight size={24} />
-              </button>
-
-              {/* Dots Indicator */}
-              <div className="flex justify-center mt-6 space-x-2">
-                {filteredProjects.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentProjectIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-colors ${
-                      index === currentProjectIndex ? 'bg-amber-400' : 'bg-white/30'
-                    }`}
-                  />
+          {/* Testimonials Section */}
+          <section className="pt-24 pb-16 relative z-10" id='testimonials'>
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+              <h2 className="text-4xl font-bold mb-12 text-center">Testimonials</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {testimonials.map((testimonial, index) => (
+                  <div key={index} className="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
+                    <div className="flex items-center mb-4">
+                      <img
+                        src={testimonial.avatar}
+                        alt={testimonial.name}
+                        className="w-12 h-12 rounded-full mr-4"
+                      />
+                      <div>
+                        <h4 className="font-semibold">{testimonial.name}</h4>
+                        <p className="text-white/60 text-sm">{testimonial.position}</p>
+                      </div>
+                    </div>
+                    <p className="text-white/80 italic">"{testimonial.content}"</p>
+                  </div>
                 ))}
               </div>
             </div>
-          </div>
-        </section>
-      )}
+          </section>
 
-      {/* Testimonials Section */}
-      {activeSection === 'testimonials' && (
-        <section className="pt-24 pb-16 relative z-10">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 className="text-4xl font-bold mb-12 text-center">Testimonials</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {testimonials.map((testimonial, index) => (
-                <div key={index} className="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
-                  <div className="flex items-center mb-4">
-                    <img
-                      src={testimonial.avatar}
-                      alt={testimonial.name}
-                      className="w-12 h-12 rounded-full mr-4"
-                    />
-                    <div>
-                      <h4 className="font-semibold">{testimonial.name}</h4>
-                      <p className="text-white/60 text-sm">{testimonial.position}</p>
-                    </div>
-                  </div>
-                  <p className="text-white/80 italic">"{testimonial.content}"</p>
-                </div>
-              ))}
+          {/* Contact Section */}
+          <section className="pt-24 pb-16 relative z-10" id='contact'>
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+              <h2 className="text-4xl font-bold mb-8">Let's Build Something Amazing</h2>
+              <p className="text-xl text-white/80 mb-12">
+                Ready to bring your ideas to life? Let's connect and create something extraordinary together.
+              </p>
+              <div className="flex justify-center space-x-6 mb-12">
+                <a
+                  href="mailto:jamesdonkor987@gmail.com"
+                  className="flex items-center bg-amber-500 text-black px-6 py-3 rounded-lg hover:bg-amber-400 transition-colors"
+                >
+                  <Mail size={20} className="mr-2" />
+                  Email Me
+                </a>
+                <a
+                  href="https://linkedin.com/in/james987"
+                  className="flex items-center bg-white/10 text-white px-6 py-3 rounded-lg hover:bg-white/20 transition-colors"
+                >
+                  <Linkedin size={20} className="mr-2" />
+                  LinkedIn
+                </a>
+                <a
+                  href="https://github.com/donkor-james"
+                  className="flex items-center bg-white/10 text-white px-6 py-3 rounded-lg hover:bg-white/20 transition-colors"
+                >
+                  <Github size={20} className="mr-2" />
+                  GitHub
+                </a>
+              </div>
             </div>
-          </div>
-        </section>
-      )}
-
-      {/* Contact Section */}
-      {activeSection === 'contact' && (
-        <section className="pt-24 pb-16 relative z-10">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl font-bold mb-8">Let's Build Something Amazing</h2>
-            <p className="text-xl text-white/80 mb-12">
-              Ready to bring your ideas to life? Let's connect and create something extraordinary together.
-            </p>
-            <div className="flex justify-center space-x-6 mb-12">
-              <a
-                href="mailto:your@email.com"
-                className="flex items-center bg-amber-500 text-black px-6 py-3 rounded-lg hover:bg-amber-400 transition-colors"
-              >
-                <Mail size={20} className="mr-2" />
-                Email Me
-              </a>
-              <a
-                href="https://linkedin.com/in/yourprofile"
-                className="flex items-center bg-white/10 text-white px-6 py-3 rounded-lg hover:bg-white/20 transition-colors"
-              >
-                <Linkedin size={20} className="mr-2" />
-                LinkedIn
-              </a>
-              <a
-                href="https://github.com/yourusername"
-                className="flex items-center bg-white/10 text-white px-6 py-3 rounded-lg hover:bg-white/20 transition-colors"
-              >
-                <Github size={20} className="mr-2" />
-                GitHub
-              </a>
-            </div>
-          </div>
-        </section>
-      )}
+          </section>
 
       {/* Footer */}
       <footer className="bg-black-overlay border-t border-white/10 py-8 relative z-10 mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-white/60">
-            © 2025 [Your Name]. Built with React & Tailwind CSS.
+            © 2025 James Donkor. Built with React & Tailwind CSS.
           </p>
         </div>
       </footer>
