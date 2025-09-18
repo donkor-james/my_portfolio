@@ -1,0 +1,81 @@
+/* Custom background gradient for main container */
+.bg-gradient-custom {
+  background: linear-gradient(135deg, #0f172a 0%, #6d28d9 50%, #0f172a 100%);
+}
+
+/* Custom text color for amber */
+.text-amber-custom {
+  color: #f59e0b;
+}
+
+/* Custom border color for amber */
+.border-amber-custom {
+  border-color: #f59e0b;
+}
+
+/* Custom background color for amber */
+.bg-amber-custom {
+  background-color: #f59e0b;
+}
+
+/* Custom overlay for black with opacity */
+.bg-black-overlay {
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(8px);
+}
+
+/* Glassy card backgrounds */
+.bg-glass {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+  border-radius: 1.5rem;
+}
+
+/* Navbar blur and overlay */
+.navbar-blur {
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Button styles */
+.btn-amber {
+  background: #f59e0b;
+  color: #222;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(245,158,11,0.15);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+.btn-amber:hover {
+  background: #fbbf24;
+  color: #111;
+  box-shadow: 0 4px 16px rgba(245,158,11,0.25);
+}
+.btn-glass {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+}
+.btn-glass:hover {
+  background: rgba(255,255,255,0.18);
+  color: #f59e0b;
+}
+
+/* Mobile menu overlay */
+.mobile-menu-blur {
+  background: rgba(0,0,0,0.9);
+  backdrop-filter: blur(16px);
+}
+
+/* Amber badge */
+.badge-amber {
+  background: #f59e0b;
+  color: #222;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+}
