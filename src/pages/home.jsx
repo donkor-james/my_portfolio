@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Github, ExternalLink, Mail, Linkedin, ChevronLeft, ChevronRight, Menu, X, ArrowRight, Code, Database, Smartphone, Bot } from 'lucide-react';
-
+import Chat from '../assets/chat.png'; // Assuming these are image imports
+import Easy from '../assets/easy.png'; // Assuming these are image imports
+import Wiki from '../assets/wiki.png'; // Assuming these are image imports
+import Write from '../assets/write.png'; // Assuming these are image imports
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [activeFilter, setActiveFilter] = useState('all');
@@ -12,7 +15,7 @@ const Portfolio = () => {
       id: 1,
       title: "ChatApp",
       category: "fullstack",
-      image: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=600&h=400&fit=crop",
+      image: Chat,
       description: `Full-stack real-time chat application with authentication.\n\nBuilt with Django (REST API, Channels, JWT, Daphne) and React (Tailwind CSS).\nFeatures: user registration/login, email verification, 2FA, real-time messaging, contact management.\nImplemented WebSocket-based chat for instant communication.\nDesigned responsive UI and secure authentication flows.`,
       technologies: ["Django", "React", "Tailwind CSS", "JWT", "Channels", "Daphne"],
       github: "https://github.com/donkor-james/chatapp",
@@ -23,7 +26,7 @@ const Portfolio = () => {
       id: 2,
       title: "Blog App",
       category: "fullstack",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
+      image: Write,
       description: `Developed using Django (REST Framework) and React.\nKey features: account creation/login, post publishing/editing, category-based browsing, cursor pagination.\nBuilt a modern, mobile-friendly interface and efficient API endpoints.\nContainerized with Docker for streamlined deployment.`,
       technologies: ["Django", "React", "Docker", "REST Framework"],
       github: "https://github.com/donkor-james/blog_website",
@@ -43,7 +46,7 @@ const Portfolio = () => {
       id: 4,
       title: "Easy Download Bot",
       category: "automation",
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
+      image: Easy,
       description: `Developed a Telegram bot for automated video downloads from multiple platforms.\nUtilized Python and Pyrogram for bot functionality, along with yt-dlp for video downloading.\nImplemented real-time download tracking features for enhanced user experience.`,
       technologies: ["Python", "Pyrogram", "yt-dlp", "Telegram Bot"],
       github: "",
@@ -53,7 +56,7 @@ const Portfolio = () => {
       id: 5,
       title: "Wikipedia Clone",
       category: "frontend",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop",
+      image: Wiki,
       description: `Developed as a course project for Website Design and Technologies in Computer Science.\nA Wikipedia-like website allowing users to view, create, edit, and explore entries across various categories (arts, science, history, etc.).\nCategory-based navigation and content organization.\nCustom styling for different sections and pages.\nResponsive design elements for usability.\nIntegration of images and media for enhanced presentation.`,
       technologies: ["HTML", "CSS"],
       github: "https://github.com/donkor-james/wikiclone",
