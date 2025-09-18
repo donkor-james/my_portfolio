@@ -6,6 +6,7 @@ import Wiki from '../assets/wiki.png'; // Assuming these are image imports
 import Write from '../assets/write_space.png'; // Assuming these are image imports
 import ProfilePic from '../assets/me.jpg'; // Assuming these are image imports
 import Andrews from '../assets/andrews.jpeg'; // Assuming these are image imports
+import LOR from '../assets/LETTERHEAD_OF_RECOMMENDATION.pdf'; // Assuming these are image imports
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [activeFilter, setActiveFilter] = useState('all');
@@ -74,6 +75,7 @@ const Portfolio = () => {
       description: `Developed secure authentication features for a voting system using Django, including user registration and login.\nImplemented Two-Factor Authentication (2FA) for enhanced security.\nCreated RESTful API endpoints for seamless frontend-backend communication.\nManaged CRUD operations for user accounts and voting records.\nCollaborated with cross-functional teams to ensure project alignment.`,
       technologies: ["Django", "REST API", "2FA", "Authentication"],
       hasRecommendation: true,
+      recommendation: LOR,
       hasCompletion: false
     },
     {
@@ -314,7 +316,7 @@ const Portfolio = () => {
                       <div className="flex gap-2 mt-4 lg:mt-0">
                         {exp.hasRecommendation && (
                           <div className='px-4 py-2 rounded-full' style={{background:'#3b82f6',color:'#fff'}}>
-                            <a href='../assets/Insight_recommendation_letter.pdf' target='_blank' rel='noopener noreferrer'>
+                            <a href={exp.recommendation} target='_blank' rel='noopener noreferrer'>
                               <span className="" >
                                 Recommendation Letter
                               </span>
