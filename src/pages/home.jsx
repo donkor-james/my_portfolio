@@ -232,17 +232,19 @@ const Portfolio = () => {
                   <p className="text-xl text-white/80 mb-8 max-w-2xl">
                     Hi, I'm James Donkor, Skilled Software Developer with experience in web development, bot and automation development. I am proficient in multiple programming languages and frameworks with a strong foundation in computer science principles.
                   </p>
-                  <a href="#projects" className='mr-4'>
-                    <button 
-                      className="inline-flex items-center btn-amber px-6 py-4"
-                    >
-                      View My Work
-                    <ArrowRight className="ml-2" size={20} />
-                  </button>
-                  </a>
+                  <div className='mb-4'>
+                    <a href="#projects" className='mr-4 mb-3'>
+                      <button 
+                        className="inline-flex items-center btn-amber px-6 py-4"
+                      >
+                        View My Work
+                      <ArrowRight className="ml-2" size={20} />
+                    </button>
+                    </a>
+                  </div>
                   <a href={Resume} target='_blank' className=''>
                     <button 
-                      className="inline-flex items-center btn-amber px-8 py-4"
+                      className="inline-flex items-center btn-amber px-10 py-4"
                       style={{background:'#3b82f6',color:'#fff'}}
                     >
                      My Resume
@@ -271,8 +273,8 @@ const Portfolio = () => {
           {/* About Section */}
           <section className="pt-24 pb-16 relative z-10" id='about'>
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-4xl font-bold mb-12 text-center">About Me</h2>
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
+              <h2 className="text-4xl font-bold mb-4 md:mb-12 text-center">About Me</h2>
+              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 md:p-8">
                 <p className="text-lg text-white/90 leading-relaxed mb-6">
                   I am a Software Developer with hands-on experience in full-stack web development, 
                   proficient in Python, JavaScript, and C. I have created various web applications and 
@@ -312,7 +314,7 @@ const Portfolio = () => {
           {/* Experience Section */}
           <section className="pt-24 pb-16 relative z-10" id='experience'>
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-4xl font-bold mb-12 text-center">My Experience</h2>
+              <h2 className="text-4xl font-bold mb-4 md:mb-12 text-center">My Experience</h2>
               <div className="space-y-8">
                 {experiences.map((exp, index) => (
                   <div key={index} className="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
@@ -359,22 +361,22 @@ const Portfolio = () => {
           </section>
 
           {/* Projects Section */}
-          <section className="pt-24 pb-16 relative z-10" id='projects'>
+          <section className="pt-24 pb-12 md:pb-16 relative z-10" id='projects'>
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-4xl font-bold mb-12 text-center">Personal Projects</h2>
+              <h2 className="text-4xl font-bold mb-8 md:mb-12 text-center">Personal Projects</h2>
               
               {/* Filter Buttons */}
               <div className="flex flex-wrap justify-center gap-4 mb-12">
                 {[
                   { key: 'all', label: 'All Projects', icon: Code },
-                  { key: 'frontend', label: 'Frontend', icon: Code },
                   { key: 'fullstack', label: 'Full Stack', icon: Database },
+                  { key: 'frontend', label: 'Frontend', icon: Code },
                   { key: 'automation', label: 'Automation & Bots', icon: Bot }
                 ].map(({ key, label, icon: Icon }) => (
                   <button
                     key={key}
                     onClick={() => setActiveFilter(key)}
-                    className={`flex items-center px-6 py-3 rounded-full transition-colors ${
+                    className={`flex items-center px-4 md:px-6 py-2 md:py-3 rounded-full transition-colors ${
                       activeFilter === key
                         ? 'bg-amber-500 text-black'
                         : 'bg-white/10 text-white hover:bg-white/20'
@@ -423,13 +425,15 @@ const Portfolio = () => {
                                 ))}
                               </div>
                               <div className="flex gap-4">
-                                <a
-                                  href={project.github}
-                                  className="flex items-center bg-white/10 text-white px-4 py-2 rounded-lg hover:bg-white/20 transition-colors"
-                                >
-                                  <Github size={18} className="mr-2" />
-                                  Code
-                                </a>
+                                <div className='bg-black rounded-full'>
+                                  <a
+                                    href={project.github}
+                                    className="flex items-center bg-white/10 text-white px-4 py-2 rounded-lg hover:bg-white/20 transition-colors"
+                                  >
+                                    <Github size={18} className="mr-2" />
+                                    Code
+                                  </a>
+                                </div>
                                 {project.demo && (
                                   <a
                                     href={project.demo}
@@ -451,13 +455,13 @@ const Portfolio = () => {
                 {/* Navigation Arrows */}
                 <button
                   onClick={prevProject}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm p-3 rounded-full hover:bg-white/20 transition-colors"
+                  className="absolute -left-3 md:-left-10 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm p-3 md:pr-1 pr-10 rounded-full hover:bg-white/20 transition-colors"
                 >
                   <ChevronLeft size={24} />
                 </button>
                 <button
                   onClick={nextProject}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm p-3 rounded-full hover:bg-white/20 transition-colors"
+                  className="absolute -right-3 md:right-2 top-1/2 -translate-y-1/2 bg-white/10 backdrop-blur-sm p-3 md:pl-4 pl-10 rounded-full hover:bg-white/20 transition-colors"
                 >
                   <ChevronRight size={24} />
                 </button>
@@ -479,9 +483,9 @@ const Portfolio = () => {
           </section>
 
           {/* Testimonials Section */}
-          <section className="pt-24 pb-16 relative z-10" id='testimonials'>
+          <section className="pt-10 md:pt-24 pb-16 relative z-10" id='testimonials'>
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-4xl font-bold mb-12 text-center">Testimonials</h2>
+              <h2 className="text-4xl font-bold mb-8 md:mb-12 text-center">Testimonials</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {testimonials.map((testimonial, index) => (
                   <div key={index} className="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
@@ -510,24 +514,24 @@ const Portfolio = () => {
               <p className="text-xl text-white/80 mb-12">
                 Ready to bring your ideas to life? Let's connect and create something extraordinary together.
               </p>
-              <div className="flex justify-center space-x-6 mb-12">
+              <div className="flex justify-center md:space-x-4 space-x-4 mb-12">
                 <a
                   href="mailto:jamesdonkor987@gmail.com"
-                  className="flex items-center bg-amber-500 text-black px-6 py-3 rounded-lg hover:bg-amber-400 transition-colors"
+                  className="flex items-center bg-amber-500 text-black px-3 md:px-5 py-3 rounded-lg hover:bg-amber-400 transition-colors"
                 >
                   <Mail size={20} className="mr-2" />
-                  Email Me
+                  Email
                 </a>
                 <a
                   href="https://linkedin.com/in/james987"
-                  className="flex items-center bg-white/10 text-white px-6 py-3 rounded-lg hover:bg-white/20 transition-colors"
+                  className="flex items-center bg-white/10 text-white px-3 md:px-5 py-3 rounded-lg hover:bg-white/20 transition-colors"
                 >
                   <Linkedin size={20} className="mr-2" />
                   LinkedIn
                 </a>
                 <a
                   href="https://github.com/donkor-james"
-                  className="flex items-center bg-white/10 text-white px-6 py-3 rounded-lg hover:bg-white/20 transition-colors"
+                  className="flex items-center bg-white/10 text-white px-3 md:px-5 py-3 rounded-lg hover:bg-white/20 transition-colors"
                 >
                   <Github size={20} className="mr-2" />
                   GitHub
