@@ -540,7 +540,7 @@ const Portfolio = () => {
       <footer className="bg-black-overlay border-t border-white/10 py-8 relative z-10 mt-auto">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-white/60">
-            © 2025 James Donkor. Built with React & Tailwind CSS.
+            © 2025 James Donkor.
           </p>
         </div>
       </footer>
