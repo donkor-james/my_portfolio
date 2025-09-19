@@ -7,6 +7,7 @@ import Write from '../assets/write_space.png'; // Assuming these are image impor
 import ProfilePic from '../assets/me.jpg'; // Assuming these are image imports
 import Andrews from '../assets/andrews.jpeg'; // Assuming these are image imports
 import LOR from '../assets/LETTERHEAD_OF_RECOMMENDATION.pdf'; // Assuming these are image imports
+import Resume from '../assets/resume.pdf'; // Assuming these are image imports
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [activeFilter, setActiveFilter] = useState('all');
@@ -231,13 +232,21 @@ const Portfolio = () => {
                   <p className="text-xl text-white/80 mb-8 max-w-2xl">
                     Hi, I'm James Donkor, Skilled Software Developer with experience in web development, bot and automation development. I am proficient in multiple programming languages and frameworks with a strong foundation in computer science principles.
                   </p>
-                  <a href="#projects" className=''>
+                  <a href="#projects" className='mr-4'>
                     <button 
-                      className="inline-flex items-center btn-amber px-8 py-4"
+                      className="inline-flex items-center btn-amber px-6 py-4"
                     >
                       View My Work
                     <ArrowRight className="ml-2" size={20} />
                   </button>
+                  </a>
+                  <a href={Resume} target='_blank' className=''>
+                    <button 
+                      className="inline-flex items-center btn-amber px-8 py-4"
+                      style={{background:'#3b82f6',color:'#fff'}}
+                    >
+                     My Resume
+                    </button>
                   </a>
                 </div>
                 
