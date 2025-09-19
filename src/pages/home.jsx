@@ -203,10 +203,6 @@ const Portfolio = () => {
               {['home', 'about', 'experience', 'projects', 'testimonials', 'contact'].map((item) => (
                 <a href={`#${item}`} key={item}>
                   <button
-                    onClick={() => {
-                      setActiveSection(item);
-                      setIsMenuOpen(false);
-                    }}
                     className={`block w-full text-left py-2 capitalize transition-colors ${
                       activeSection === item 
                         ? 'text-amber-400' 
@@ -269,10 +265,13 @@ const Portfolio = () => {
               <h2 className="text-4xl font-bold mb-12 text-center">About Me</h2>
               <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8">
                 <p className="text-lg text-white/90 leading-relaxed mb-6">
-                  With hands-on experience across the full web development stack, I've built PWAs with Next.js, 
-                  designed data pipelines in Python, and migrated backend systems from .NET to Node.js. From 
-                  freelance design roots in Photoshop to shipping production React apps, I focus on performant 
-                  code and intuitive interfaces. Let's build something impactful.
+                  I am a Software Developer with hands-on experience in full-stack web development, 
+                  proficient in Python, JavaScript, and C. I have created various web applications and 
+                  automation tools, specializing in building Progressive Web Applications (PWAs) 
+                  using React and Electron. I have a strong focus on writing clean code and developing impactful solutions, 
+                  utilizing frameworks like Django and Flask, as well as working with REST APIs and SQL databases. 
+                  I am passionate about leveraging CI/CD practices and tools like Git/GitHub and Jenkins to streamline development processes. 
+                  Let’s connect and create something amazing together!
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
                   <div className="text-center">
