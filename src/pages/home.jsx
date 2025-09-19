@@ -201,20 +201,21 @@ const Portfolio = () => {
           <div className="md:hidden bg-black/90 backdrop-blur-lg">
             <div className="px-4 py-2 space-y-2">
               {['home', 'about', 'experience', 'projects', 'testimonials', 'contact'].map((item) => (
-                <button
-                  key={item}
-                  onClick={() => {
-                    setActiveSection(item);
-                    setIsMenuOpen(false);
-                  }}
-                  className={`block w-full text-left py-2 capitalize transition-colors ${
-                    activeSection === item 
-                      ? 'text-amber-400' 
-                      : 'text-white/70 hover:text-white'
-                  }`}
-                >
-                  {item}
-                </button>
+                <a href={`#${item}`} key={item}>
+                  <button
+                    onClick={() => {
+                      setActiveSection(item);
+                      setIsMenuOpen(false);
+                    }}
+                    className={`block w-full text-left py-2 capitalize transition-colors ${
+                      activeSection === item 
+                        ? 'text-amber-400' 
+                        : 'text-white/70 hover:text-white'
+                    }`}
+                  >
+                    {item}
+                  </button>
+                </a>
               ))}
             </div>
           </div>
@@ -234,7 +235,7 @@ const Portfolio = () => {
                   <p className="text-xl text-white/80 mb-8 max-w-2xl">
                     Hi, I'm James Donkor, Skilled Software Developer with experience in web development, bot and automation development. I am proficient in multiple programming languages and frameworks with a strong foundation in computer science principles.
                   </p>
-                  <a href="projects" className=''>
+                  <a href="#projects" className=''>
                     <button 
                       className="inline-flex items-center btn-amber px-8 py-4"
                     >
