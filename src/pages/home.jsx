@@ -8,6 +8,7 @@ import ProfilePic from '../assets/me.jpg'; // Assuming these are image imports
 import Andrews from '../assets/andrews.jpeg'; // Assuming these are image imports
 import LOR from '../assets/LETTERHEAD_OF_RECOMMENDATION.pdf'; // Assuming these are image imports
 import Resume from '../assets/resume.pdf'; // Assuming these are image imports
+import EasyDemo from '../assets/easy_demo.mp4'; // Assuming these are image imports
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [activeFilter, setActiveFilter] = useState('all');
@@ -44,7 +45,7 @@ const Portfolio = () => {
       description: `Developed a Telegram bot for automated video downloads from multiple platforms.\nUtilized Python and Pyrogram for bot functionality, along with yt-dlp for video downloading.\nImplemented real-time download tracking features for enhanced user experience.`,
       technologies: ["Python", "Pyrogram", "yt-dlp", "Telegram Bot"],
       github: "https://github.com/donkor-james/easy_download_bot.git",
-      demo: ""
+      demo: EasyDemo
     },
     {
       id: 4,
@@ -437,7 +438,8 @@ const Portfolio = () => {
                                 {project.demo && (
                                   <a
                                     href={project.demo}
-                                    className="flex items-center bg-amber-500 text-black px-4 py-2 rounded-lg hover:bg-amber-400 transition-colors"
+                                    className="flex items-center bg-amber-500 text-white px-4 py-2 rounded-full hover:bg-amber-400 transition-colors"
+                                    style={{background:'#3b82f6',color:'#fff'}}
                                   >
                                     <ExternalLink size={18} className="mr-2" />
                                     Demo
