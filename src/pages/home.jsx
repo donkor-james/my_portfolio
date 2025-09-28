@@ -45,7 +45,7 @@ const Portfolio = () => {
       description: `Developed a Telegram bot for automated video downloads from multiple platforms.\nUtilized Python and Pyrogram for bot functionality, along with yt-dlp for video downloading.\nImplemented real-time download tracking features for enhanced user experience.`,
       technologies: ["Python", "Pyrogram", "yt-dlp", "Telegram Bot"],
       github: "https://github.com/donkor-james/easy_download_bot.git",
-      demo: EasyDemo
+      demo: ""
     },
     {
       id: 4,
